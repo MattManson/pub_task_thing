@@ -20,8 +20,6 @@ class TestPub < MiniTest::Test
       :vodka => 5,
       :strong_whisky => 6,
     }
-
-
   end
 
   def test_number_of_drinks
