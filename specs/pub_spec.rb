@@ -14,6 +14,7 @@ class TestPub < MiniTest::Test
     @jimmy = Customer.new("Jimmy", 15, 30)
     @sam = Customer.new("Sam", 15, 17)
     @rab = Customer.new("Rab", 100, 45)
+    @burger = Food.new("Burger", 5, 1)
   end
 
   def test_number_of_drinks

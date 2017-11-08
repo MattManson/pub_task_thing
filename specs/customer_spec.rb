@@ -12,6 +12,7 @@ class TestCustomer < MiniTest::Test
     @sam = Customer.new("Sam", 15, 17)
     @rab = Customer.new("Rab", 100, 45)
     @vodka = Drink.new("Vodka", 10, 1)
+    @strong_whisky = Drink.new("Strong Whisky", 10, 3)
     @burger = Food.new("Burger", 5, 1)
   end
 
@@ -27,10 +28,10 @@ class TestCustomer < MiniTest::Test
   end
 
   def test_eat_food
-    @rab.buy_drink(@vodka)
-    @rab.increase_drunkenness(@vodka)
-    value = @rab.eat_food(@burger)
-    assert_equal(value, 0)
+    @rab.buy_drink(@strong_whisky)
+    @rab.increase_drunkenness(@strong_whisky)
+    @rab.eat_food(@burger)
+    assert_equal(@rab.drunkenness, 2)
   end
 
 

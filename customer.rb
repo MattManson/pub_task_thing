@@ -20,7 +20,7 @@ class Customer
   end
 
   def eat_food(food)
-    @drunkenness - food.rejuv_level
+    @drunkenness -= food.rejuv_level
     return @drunkenness
   end
 
