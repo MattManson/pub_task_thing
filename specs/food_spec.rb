@@ -5,11 +5,10 @@ require_relative('../drink.rb')
 require_relative('../customer.rb')
 require_relative('../food.rb')
 
-class TestDrink < MiniTest::Test
+class TestFood
 
   def setup
-    @vodka = Drink.new("Vodka", 10, 1)
-    @strong_whisky = Drink.new("Strong Whisky", 10, 3)
+    @burger = Food.new("Burger", 5, 1)
   end
 
 end
