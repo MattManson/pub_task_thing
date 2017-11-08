@@ -15,6 +15,8 @@ class TestPub < MiniTest::Test
     @sam = Customer.new("Sam", 15, 17)
     @rab = Customer.new("Rab", 100, 45)
     @burger = Food.new("Burger", 5, 1)
+
+
   end
 
   def test_number_of_drinks
@@ -69,6 +71,13 @@ class TestPub < MiniTest::Test
     value = @the_pub.sell_drink(@strong_whisky, @rab)
     assert_equal(value, "refuse sale")
   end
+
+  def test_number_of_drinks_multiple_drinks
+    @the_pub.add_drink_to_list(@strong_whisky)
+    @the_pub.add_drink_to_list(@vodka)
+    assert_equal(@the_pub.drinks.length, 2)
+  end
+
 
 
 end

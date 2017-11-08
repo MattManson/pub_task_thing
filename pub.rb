@@ -5,7 +5,7 @@ class Pub
   def initialize(name, till)
     @name = name
     @till = till
-    @drinks = []
+    @drinks = {}
   end
 
   def number_of_drinks
