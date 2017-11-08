@@ -16,6 +16,11 @@ class TestPub < MiniTest::Test
     @rab = Customer.new("Rab", 100, 45)
     @burger = Food.new("Burger", 5, 1)
 
+    @stock = {
+      :vodka => 5,
+      :strong_whisky => 6,
+    }
+
 
   end
 
@@ -77,6 +82,31 @@ class TestPub < MiniTest::Test
     @the_pub.add_drink_to_list(@vodka)
     assert_equal(@the_pub.drinks.length, 2)
   end
+
+  def test_hash_value
+    donkey = @the_pub.hash_value(@stock)
+    assert_equal(donkey, 5)
+  end
+
+  def test_add_to_stock
+    value = @the_pub.stock_increase(@stock, 10)
+    assert_equal(value, 15)
+  end
+
+  def test_remove_from_stock_hash
+    value = @the_pub.stock_decrease(@stock, 3)
+    assert_equal(value, 2)
+  end
+
+  def test_total_value_drinks
+    value = @the_pub.all_booze_money(@stock, @vodka, @strong_whisky)
+    assert_equal(350, value)
+  end
+
+  # def test_remove_from_stock
+  #   remove_from_stock(@the_pub, :vodka)
+  #   result =
+  # end
 
 
 
